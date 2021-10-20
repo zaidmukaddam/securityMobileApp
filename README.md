@@ -18,7 +18,7 @@ The message exchange is performed through **Sockets**.
 The project is composed of two parts.
 
 - **The Server**: NodeJs App **hosted on heroku** that will play the role of the **bridge** between client and our **Keyserver**.
-  - Project Repo: [securityMobileApp](https://github.com/zaidmukaddam/securityMobileApp)
+  - Project Repo: [securityProjectServer](https://github.com/zaidmukaddam/securityProjectServer)
 - **The Client App**: A Flutter mobile app that contains all our buisness logic.
 
 <img src="Images/ReadmeImages/sec.png?raw=true" />
