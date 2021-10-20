@@ -9,7 +9,7 @@ This project is a demonstration of some cryptography algorithms using Flutter Fr
 - Symmetric encryption/decryption.
 - Asymmetric encryption/decryption.
 
-Also for fun, we implemented A **Chatroom App** & **Messenger chat app** inside the main app in order to demonstrate how Symmetric and Asymmetric encyption works .
+Also for fun, I implemented A **Chatroom App** & **Messenger chat app** inside the main app in order to demonstrate how Symmetric and Asymmetric encyption works .
 
 The message exchange is performed through **Sockets**.
 
@@ -21,7 +21,7 @@ The project is composed of two parts.
   - Project Repo: [securityMobileApp](https://github.com/zaidmukaddam/securityMobileApp)
 - **The Client App**: A Flutter mobile app that contains all our buisness logic.
 
-<img src="Images/ReadmeImages/sec.png?raw=true" />
+<img src="https://github.com/zaidmukaddam/securityMobileApp/blob/main/Images/ReadmeImages/sec.png?raw=true" />
 
 ---
 
@@ -29,7 +29,7 @@ The project is composed of two parts.
 
 > “A user interface is like a joke. If you have to explain it, it’s not that good”. — Martin Leblanc
 
-Our User Interface is super **userfriendly**, but for educational purposes :man_student: we will explain it.
+Our User Interface is super **userfriendly**, but for educational purposes :man_student: I will explain it.
 
 Now the fun part 😎, Let's discover the app.
 
@@ -79,7 +79,7 @@ Nothing special, It just reverses the operation of encoding.
 
 ### Hashing
 
-In this part you'll see how we can hash text and crack the hashing using a **brute-force attack** .
+In this part you'll see how I can hash text and crack the hashing using a **brute-force attack** .
 
 <img src="https://github.com/zaidmukaddam/securityMobileApp/blob/main/Images/ReadmeImages/1610829457071.jpg?raw=true" width="300" />
 
@@ -107,13 +107,13 @@ To illustrate, this is the output of running hashing `Hello world` in :
 
 #### Cracking the Hash
 
-For the **brute-force attack** we are using a **5 Million words** dictionnary downloaded from [this link](https://thehacktoday.com/password-cracking-dictionarys-download-for-free/) .
+For the **brute-force attack** I are using a **5 Million words** dictionnary downloaded from [this link](https://thehacktoday.com/password-cracking-dictionarys-download-for-free/) .
 
 <img src="https://github.com/zaidmukaddam/securityMobileApp/blob/main/Images/ReadmeImages/1610829457054.jpg?raw=true" width="300" />
 
-Because of the huge computational power required for this operation we had to divide the dictionary onto **mini-batchs** with 10000 words in each of them.
+Because of the huge computational power required for this operation I had to divide the dictionary onto **mini-batchs** with 10000 words in each of them.
 
-Also we executed the code using the `compute` function to do all the work on a different "Thread" to avoid skipping frames and give a feed back on the operation's progress since it takes a long time.
+Also I executed the code using the `compute` function to do all the work on a different "Thread" to avoid skipping frames and give a feed back on the operation's progress since it takes a long time.
 
 ##### Test result :
 
@@ -138,7 +138,7 @@ This is the screen you'll see when you open go to `Symmetric Encryption` from th
 
 <img src="https://github.com/zaidmukaddam/securityMobileApp/blob/main/Images/ReadmeImages/1610829457038.jpg?raw=true" width="300" />
 
-For symmetric encryption we need, in addition to the text, a **key** that both side of the encrypted communication knows.
+For symmetric encryption I need, in addition to the text, a **key** that both side of the encrypted communication knows.
 
 Any one with the **key** can encrypt and decrypt messages.
 
@@ -193,7 +193,7 @@ By Clicking any chat item you will be redirected to a page with all the details 
 
 <img src="https://github.com/zaidmukaddam/securityMobileApp/blob/main/Images/ReadmeImages/1610829456904.jpg?raw=true" width="300" />
 
-We don't spy on your messages, we are not **WhatsApp** :sob: , be like us :sunglasses: .
+I don't spy on your messages, I are not **WhatsApp** :sob: , be like us :sunglasses: .
 
 ---
 
@@ -250,7 +250,7 @@ This Interface allows the user to verify the signature of a message using the co
 
 Now to the **coolest** part.
 
-First, let's understand how things work then we will see the UI.
+First, let's understand how things work then I will see the UI.
 
 Let's say `Bob` want to send a message to `Alice` , this is what going to happen:
 
@@ -262,11 +262,11 @@ Let's say `Bob` want to send a message to `Alice` , this is what going to happen
 6. `Alice` decrypt the message using her **private key**.
 7. `Alice` verify `Bob`'s signature using his **public key**.
 
-##### Problems we had :warning: :
+##### Problems I had :warning: :
 
-Life is not always a bed of roses, we learned it the hard way that RSA actually has a maximum size of message to encrypt.
+Life is not always a bed of roses, I learned it the hard way that RSA actually has a maximum size of message to encrypt.
 
-To calculate it we can use this table:
+To calculate it I can use this table:
 
 | Hash    | OVERHEAD | RSA 1024 | RSA 2048 | RSA 3072 | RSA 4096 |
 | ------- | -------- | -------- | -------- | -------- | -------- |
@@ -276,13 +276,13 @@ To calculate it we can use this table:
 | SHA-384 | 98       | 30       | 158      | 286      | 414      |
 | SHA-512 | 130      | N/A      | 126      | 254      | 382      |
 
-Since we are using **RSA 2048** with **SHA-256** then we only have 190 bytes as maximum size.
+Since I are using **RSA 2048** with **SHA-256** then I only have 190 bytes as maximum size.
 
-And if we take in concediration that **OAEP** padding takes 42 bytes, then the remaining is `148 bytes` :thinking:.
+And if I take in concediration that **OAEP** padding takes 42 bytes, then the remaining is `148 bytes` :thinking:.
 
-To solve the issue we had to make our message's size a multiple of `148` by adding extra spaces on the top right. then we divide the message in blocks of `148 bytes`, encrypt each of them and send the concatenated result. :sunglasses:
+To solve the issue I had to make our message's size a multiple of `148` by adding extra spaces on the top right. then I divide the message in blocks of `148 bytes`, encrypt each of them and send the concatenated result. :sunglasses:
 
-We also send the **size of an encrypted block** so the receiver can reverse the operation and get the message back.
+I also send the **size of an encrypted block** so the receiver can reverse the operation and get the message back.
 
 This is an example of a transmetter message:
 
@@ -318,4 +318,4 @@ And back to the messenger screen, the user can switch between different conversa
 
 <img src="https://github.com/zaidmukaddam/securityMobileApp/blob/main/Images/ReadmeImages/1610829456924.jpg?raw=true" width="300" />
 
-We are not saving messages locally, so once the user leaves the app, all data will be removed from the RAM.
+I are not saving messages locally, so once the user leaves the app, all data will be removed from the RAM.
